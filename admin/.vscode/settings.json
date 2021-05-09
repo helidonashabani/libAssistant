@@ -1,0 +1,18 @@
+{
+    "python.pythonPath": "C:\\Users\\андрей\\AppData\\Local\\Programs\\Python\\Python38\\python.exe",
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 33066,
+            "driver": "MySQL",
+            "name": "admin",
+            "username": "root",
+            "database": "admin",
+            "password": "root"
+        }
+    ]
+}
