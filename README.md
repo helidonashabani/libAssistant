@@ -18,7 +18,7 @@ python manage.py migrate
 ## Main API
 Run following commands:\
 cd main\
-docker-compose up --build
-docker-compose exec backend sh
-python manage.py db migrate
-python manage.py db upgrade
+docker-compose up --build\
+docker-compose exec backend sh\
+python manage.py db migrate\
+python manage.py db upgrade\
