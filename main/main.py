@@ -54,11 +54,27 @@ class Wishlists(db.Model):
 
 @app.route('/api/books', methods=['GET'])
 @app.route('/api/books/<int:page>')
-def index(page=0, per_page=20):
-    record_query = Book.query.paginate(page, per_page, False)
-    total = record_query.total
-    record_items = record_query.items
-    return jsonify(record_items)
+def index(page=None):
+    if page is None:
+        page = request.args.get('page', 1, type=int)
+    per_page = request.args.get('per_page', 10, type=int)
+    if request.args.get('search') is None:
+        record_query = Book.query.paginate(page, per_page, False)
+    else:
+        search = "%{}%".format(request.args.get('search'))
+        record_query = Book.query.filter(
+                                    (Book.title.like(search)) |
+                                    (Book.auth.like(search)) |
+                                    (Book.publisher.like(search)) |
+                                    (Book.isbn.like(search))
+                                    ).paginate(page, per_page, False)
+
+    data = {
+             "books": record_query.items,
+             "total": record_query.total,
+             "next": record_query.has_next,
+            }
+    return jsonify(data)
 
 
 @app.route('/api/wishlist', methods=['POST'])
@@ -89,10 +105,6 @@ def wishlist():
     return jsonify({
         'message': 'success'
     })
-
-"""
-@app.route('/api/books', methods=['GET'])
-"""
 
 
 if __name__ == '__main__':
