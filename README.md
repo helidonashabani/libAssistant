@@ -12,7 +12,7 @@ Run following commands:\
 docker-compose up --build \
 docker-compose exec backend sh \
 python manage.py makemigrations \
-python manage.py migrate** \
+python manage.py migrate** 
 
 ## Main API
 Run following commands:\
