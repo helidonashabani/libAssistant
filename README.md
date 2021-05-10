@@ -7,18 +7,17 @@ Internal API between Main and Administration using RabbitMQ
 # Installation
 ## Admin API
 Run following commands:\
-cd admin\
+**cd admin\
 .\env\Scripts\activate \
-docker-compose up --build
-DB:
-docker-compose exec backend sh
-python manage.py makemigrations
-python manage.py migrate
+docker-compose up --build \
+docker-compose exec backend sh \
+python manage.py makemigrations \
+python manage.py migrate** \
 
 ## Main API
 Run following commands:\
-cd main\
+**cd main\
 docker-compose up --build\
 docker-compose exec backend sh\
 python manage.py db migrate\
-python manage.py db upgrade\
+python manage.py db upgrade**
