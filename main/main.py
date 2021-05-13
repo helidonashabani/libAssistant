@@ -89,9 +89,9 @@ def wishlist():
     user_id = json['id']
 
     try:
-        wishlists = Wishlists(book_id=book_id, quantity=quantity, user_id=user_id)
-        db.session.add(wishlists)
-        db.session.commit()
+        #wishlists = Wishlists(book_id=book_id, quantity=quantity, user_id=user_id)
+        #db.session.add(wishlists)
+        #db.session.commit()
         data = {
             "book_id": book_id,
             "quantity": quantity,
@@ -100,8 +100,7 @@ def wishlist():
         publish('book_to_wishlist', data)
 
     except Exception as e:
-        print(str(e))
-        #abort(400, 'You already add to wishlist this product')
+        abort(400, 'You already add to wishlist this product')
 
     return jsonify({
         'message': 'success'
