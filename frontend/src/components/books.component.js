@@ -56,13 +56,13 @@ export default () => {
         <div class='books-container'>
           {books.map((book) => (
             <div key={book.id} class='card'>
-              <img src={book.avatar} class='card-img-top' />
+              <img src={book.image} class='card-img-top' />
               <div class='card-body'>
                 <h5 class='card-title'>{book.title}</h5>
                 <h6 class='card-subtitle mb-2 text-muted'>
-                  {book.writer}, {book.year}
+                  {book.auth}, {book.publisher}
                 </h6>
-                <p class='card-text'>{book.description}</p>
+                <p class='card-text'>ISBN: {book.isbn}</p>
               </div>
             </div>
           ))}
