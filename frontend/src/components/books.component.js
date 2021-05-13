@@ -22,8 +22,10 @@ export default () => {
   };
 
   useEffect(() => {
-    const initBooks = await getBooks();
-    setBooks(initBooks);
+    (async () => {
+      const initBooks = await getBooks();
+      setBooks(initBooks);
+    })();
   }, []);
 
   return (
