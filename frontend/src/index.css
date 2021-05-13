@@ -44,6 +44,10 @@ html,
   text-align: left;
 }
 
+.card-img-top {
+  height:150px !important;
+}
+
 .auth-inner {
   width: 450px;
   margin: auto;
@@ -97,7 +101,6 @@ html,
   display: flex;
   flex-wrap: wrap;
   overflow: auto;
-  height: 90%;
 }
 
 @media screen and (min-width: 1367px) {

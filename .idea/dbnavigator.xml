@@ -26,10 +26,10 @@
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="14300ab7-75f7-44d1-b237-81de4d1cf8c0">
-        <schema name="admin" object-types="dataset trigger, column, view, constraint, table, index, function, procedure" />
+        <schema name="admin" object-types="view, table" />
       </connection>
       <connection connection-id="b264c596-70fe-4ba8-81bb-0f17fbbf3ed4">
-        <schema name="main" object-types="dataset trigger, column, view, constraint, table, index, function, procedure" />
+        <schema name="main" object-types="view, dataset trigger, table, constraint, column, function, procedure, index" />
       </connection>
     </loaded-nodes>
   </component>
@@ -42,9 +42,7 @@
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="b264c596-70fe-4ba8-81bb-0f17fbbf3ed4" object-ref="schemas/main/tables/wishlists" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="14300ab7-75f7-44d1-b237-81de4d1cf8c0" />

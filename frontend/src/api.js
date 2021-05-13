@@ -20,7 +20,7 @@ export const getBooks = async (searchString = '') => {
     `${API_URL}/api/books${searchString ? '?search=' + searchString : ''}`
   );
 
-  return data;
+  return data.books;
 };
 
 export const login = async (username, password) => {
