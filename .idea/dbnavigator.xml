@@ -26,10 +26,10 @@
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="14300ab7-75f7-44d1-b237-81de4d1cf8c0">
-        <schema name="admin" object-types="function, constraint, procedure, column, index, view, table, dataset trigger" />
+        <schema name="admin" object-types="dataset trigger, column, view, constraint, table, index, function, procedure" />
       </connection>
       <connection connection-id="b264c596-70fe-4ba8-81bb-0f17fbbf3ed4">
-        <schema name="main" object-types="function, constraint, procedure, column, index, view, table, dataset trigger" />
+        <schema name="main" object-types="dataset trigger, column, view, constraint, table, index, function, procedure" />
       </connection>
     </loaded-nodes>
   </component>
@@ -43,7 +43,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files>
-      <object connection-id="b264c596-70fe-4ba8-81bb-0f17fbbf3ed4" object-ref="schemas/main/tables/book" />
+      <object connection-id="b264c596-70fe-4ba8-81bb-0f17fbbf3ed4" object-ref="schemas/main/tables/wishlists" />
     </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
@@ -65,6 +65,7 @@
     </filter-actions>
     <filter-actions connection-id="14300ab7-75f7-44d1-b237-81de4d1cf8c0" dataset="admin.products_user" active-filter-id="" />
     <filter-actions connection-id="b264c596-70fe-4ba8-81bb-0f17fbbf3ed4" dataset="main.book" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="b264c596-70fe-4ba8-81bb-0f17fbbf3ed4" dataset="main.wishlists" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="b264c596-70fe-4ba8-81bb-0f17fbbf3ed4" dataset="main.book_user" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
@@ -95,7 +96,7 @@
     <connections>
       <connection id="14300ab7-75f7-44d1-b237-81de4d1cf8c0" active="true">
         <database>
-          <name value="mustafin" />
+          <name value="admin" />
           <description value="" />
           <database-type value="MYSQL" />
           <config-type value="BASIC" />

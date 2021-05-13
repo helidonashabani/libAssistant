@@ -99,8 +99,9 @@ def wishlist():
         }
         publish('book_to_wishlist', data)
 
-    except:
-        abort(400, 'You already add to wishlist this product')
+    except Exception as e:
+        print(str(e))
+        #abort(400, 'You already add to wishlist this product')
 
     return jsonify({
         'message': 'success'
