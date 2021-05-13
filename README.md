@@ -28,8 +28,8 @@ python manage.py db upgrade**
 
 ## Frontend
 
-You should have NodeJS installed (https://nodejs.org/en/)\
-Once you have NodeJS installed, install Yarn globally (https://classic.yarnpkg.com/en/docs/install/)\
+You should have NodeJS installed (https://nodejs.org/en/) \
+Once you have NodeJS installed, install Yarn globally (https://classic.yarnpkg.com/en/docs/install/) \
 \
 Run following commands:\
 **cd frontend\
