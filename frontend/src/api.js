@@ -15,10 +15,12 @@ const API_URL = 'http://localhost:8001';
 //   })),
 // ];
 
-export const getBooks = (searchString = '') => {
-  return axios.get(
+export const getBooks = async (searchString = '') => {
+  const { data } = await axios.get(
     `${API_URL}/api/books${searchString ? '?search=' + searchString : ''}`
   );
+
+  return data;
 };
 
 export const login = async (username, password) => {

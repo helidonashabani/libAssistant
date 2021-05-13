@@ -1,25 +1,30 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { getBooks } from '../api';
 
 export default () => {
-  const [books, setBooks] = useState(getBooks());
+  const [books, setBooks] = useState([]);
   const [searchIsActive, setSearchIsActive] = useState(false);
   const [searchString, setSearchString] = useState('');
 
-  const search = () => {
+  const search = async () => {
     if (!searchString) {
       return;
     }
 
     setSearchIsActive(true);
-    setBooks(getBooks(searchString));
+    setBooks(await getBooks(searchString));
   };
 
-  const clear = () => {
+  const clear = async () => {
     setSearchIsActive(false);
-    setBooks(getBooks());
+    setBooks(await getBooks());
     setSearchString('');
   };
+
+  useEffect(() => {
+    const initBooks = await getBooks();
+    setBooks(initBooks);
+  }, []);
 
   return (
     <div className='content-wrapper'>
@@ -66,6 +71,7 @@ export default () => {
               </div>
             </div>
           ))}
+          {searchIsActive && !books.length && 'No results.'}
         </div>
       </div>
     </div>
