@@ -1,6 +1,9 @@
-import pika
+import pika, json,os,django
 
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "admin.settings")
+django.setup()
 
+# from wishlists.models import Wishlists
 from wishlists.serializers import WishlistsSerializer
 
 params = pika.URLParameters('amqps://jhcbtqpw:x66trdbJZ8BU3nXEICqY2MrDdZBjkhxp@cow.rmq2.cloudamqp.com/jhcbtqpw')
@@ -14,10 +17,13 @@ channel.queue_declare(queue='admin')
 
 def callback(ch, method, properties, body):
     print('Received in admin')
-    # if properties.content_type == 'book_to_wishlist':
-    serializer = WishlistsSerializer(data=body)
-    serializer.is_valid(raise_exception=True)
-    serializer.save()
+    data = json.loads(body)
+    print(data)
+    if data:
+        print(json.dumps(data))
+        serializer = WishlistsSerializer(data=data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
     print('Book is added to wishlist!')
 
 

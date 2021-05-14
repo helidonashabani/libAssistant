@@ -23,7 +23,7 @@
   <component name="DBNavigator.Project.DatabaseBrowserManager">
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
-    <show-object-properties value="true" />
+    <show-object-properties value="false" />
     <loaded-nodes>
       <connection connection-id="14300ab7-75f7-44d1-b237-81de4d1cf8c0">
         <schema name="admin" object-types="view, dataset trigger, table, constraint, column, function, procedure, index" />
@@ -38,11 +38,14 @@
       <console name="mustafin" type="STANDARD" schema="admin" session="Main" />
     </connection>
     <connection id="b264c596-70fe-4ba8-81bb-0f17fbbf3ed4">
-      <console name="main" type="STANDARD" schema="main" session="Main"><![CDATA[select * from wishlists]]></console>
+      <console name="main" type="STANDARD" schema="main" session="Main"><![CDATA[select * from wishlists
+delete from wishlists]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="14300ab7-75f7-44d1-b237-81de4d1cf8c0" object-ref="schemas/admin/tables/wishlists_wishlists" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="14300ab7-75f7-44d1-b237-81de4d1cf8c0" />
